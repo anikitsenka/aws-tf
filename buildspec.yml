@@ -1,0 +1,8 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - terraform init
+      - terraform plan -out tfplan
+      - terraform apply tfplan -auto-approve
