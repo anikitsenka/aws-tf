@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+
+  pre_build:
+    commands:
+      - echo "Initializing Terraform..."
+      - terraform init
+
+  build:
+    commands:
+      - echo "Planning..."
+      - terraform plan -out tfplan
+      - echo "Applying Terraform configuration..."
+      - terraform apply -auto-approve
